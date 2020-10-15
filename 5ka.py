@@ -88,10 +88,10 @@ class Parser5ka:
         while not response:
             response = self.do_request(url, self.__headers, params)
             count += 1
-            if count > self.__max_request_numbers:
-                print('Reached the maximum number of attempts')
-                break
             if not response:
+                if count > self.__max_request_numbers:
+                    print('Reached the maximum number of attempts')
+                    break
                 sleep(0.5)
                 print(
                     f'Try #{count} (from {self.__max_request_numbers}), status code is: {response.status_code}')
