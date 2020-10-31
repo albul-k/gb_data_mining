@@ -15,15 +15,17 @@ class GbparsItem(scrapy.Item):
 class HHJobItem(scrapy.Item):
     _id = scrapy.Field()
     url = scrapy.Field()
+    name = scrapy.Field()
     salary = scrapy.Field()
     description = scrapy.Field()
     skills = scrapy.Field()
-    url_company_description = scrapy.Field()
+    url_employer_description = scrapy.Field()
 
 
 class HHCompanyItem(scrapy.Item):
     _id = scrapy.Field()
     url = scrapy.Field()
-    url_company = scrapy.Field()
+    name = scrapy.Field()
+    url_employer = scrapy.Field()
     areas_of_activity = scrapy.Field()
     description = scrapy.Field()
