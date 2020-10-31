@@ -25,7 +25,7 @@ from ..loader import HHJobLoader, HHCompanyLoader
 
 class HHSpider(scrapy.Spider):
     name = 'hh'
-    allowed_domains = ['hh.ru', 'spb.hh.ru']
+    allowed_domains = ['hh.ru']
     start_urls = [
         'https://hh.ru/search/vacancy?schedule=remote&L_profession_id=0&area=113']
     xpath = {
