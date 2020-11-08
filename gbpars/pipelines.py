@@ -16,7 +16,7 @@ class GbparsPipeline:
 
     def __init__(self) -> None:
         db_client = MongoClient()
-        self.db = db_client['hh']
+        self.db = db_client['insta']
 
     def process_item(self, item, spider):
         collection = self.db[type(item).__name__]
