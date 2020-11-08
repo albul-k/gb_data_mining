@@ -2,11 +2,10 @@ import datetime as dt
 import json
 import scrapy
 from ..items import InstagramPost, InstagramTag
-import re
 
 
-class InstagramSpider(scrapy.Spider):
-    name = 'instagram'
+class InstagramTagsSpider(scrapy.Spider):
+    name = 'instagram_tags'
     allowed_domains = ['www.instagram.com']
     start_urls = ['https://www.instagram.com/']
     login_url = 'https://www.instagram.com/accounts/login/ajax/'
@@ -77,15 +76,6 @@ class InstagramSpider(scrapy.Spider):
     @staticmethod
     def get_post_item(edges):
         for node in edges:
-            accessibility_caption = node['node']['accessibility_caption']
-            if accessibility_caption is None:
-                continue
-
-            regex = ':\s{1}(\w+)\s{1}'
-            result = re.findall(regex, accessibility_caption)
-            if len(result) == 0 or result[0] != 'кот':
-                continue
-
             yield InstagramPost(
                 date_parse=dt.datetime.utcnow(),
                 data=node['node']

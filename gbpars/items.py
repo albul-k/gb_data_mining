@@ -44,3 +44,7 @@ class InstagramTag(Instagram):
 
 class InstagramPost(Instagram):
     pass
+
+
+class InstagramUser(Instagram):
+    pass

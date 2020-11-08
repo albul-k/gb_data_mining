@@ -16,7 +16,7 @@ class GbparsPipeline:
 
     def __init__(self) -> None:
         db_client = MongoClient()
-        self.db = db_client['hh']
+        self.db = db_client['insta']
 
     def process_item(self, item, spider):
         collection = self.db[type(item).__name__]
@@ -68,7 +68,7 @@ class GbparsImagesPipeline(ImagesPipeline):
 
             checksum = item['img'][0]['checksum']
             if not checksum in self.checksums:
-                self.checksums.add(str)
+                self.checksums.add(checksum)
                 try:
                     with open(self.path_to_checksums, 'a', encoding='UTF-8') as f:
                         f.write(checksum + '\n')
