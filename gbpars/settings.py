@@ -16,6 +16,8 @@ IMAGES_STORE = 'image'
 SPIDER_MODULES = ['gbpars.spiders']
 NEWSPIDER_MODULE = 'gbpars.spiders'
 
+DEPTH_LIMIT = 5
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:81.0) Gecko/20100101 Firefox/81.0'

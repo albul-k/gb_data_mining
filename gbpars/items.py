@@ -52,5 +52,4 @@ class InstagramUser(Instagram):
 
 class InstagramRelations(InstagramUser):
     id_from = scrapy.Field()
-    chain = scrapy.Field()
     is_found = scrapy.Field()
